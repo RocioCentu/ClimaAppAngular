@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+
+.container {
+  min-height: calc(100% - 4rem);
+}
+
+
+.btn{
+  color:white;
+  background-color: #33A2FF;
+}
+.btn:hover{
+  color:white;
+
+}
+
+
+
+
+.spinnerColor{
+    background-color: #33A2FF;
+}
+.icon{
+  width:30px;
+  height: 30px;
+  margin-right: 1rem;
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+html {
+    min-height: 100%;
+    position: relative;
+  }
+ 
+  .navbar{
+    background-color: #2980B9;
+    color: white;
+    height: 100px;
+    width: 102%;
+   
+   
+  }
+  a{
+    text-decoration: none;
+  }
+
+  footer {
+   
+    background-color: #2980B9;
+    position: relative;
+   margin-bottom: 0;
+    width: 102%;
+    height: 4rem;
+    color: white;
+  }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #E8F1F1;}
