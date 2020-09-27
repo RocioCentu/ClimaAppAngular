@@ -11,7 +11,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { DetallesComponent } from './components/detalles/detalles.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { MensajeErrorComponent } from './components/mensaje-error/mensaje-error.component';
 
 
 @NgModule({
@@ -21,7 +20,7 @@ import { MensajeErrorComponent } from './components/mensaje-error/mensaje-error.
     DetallesComponent,
     NavbarComponent,
     FooterComponent,
-    MensajeErrorComponent,
+   
   ],
   imports: [
     BrowserModule,
