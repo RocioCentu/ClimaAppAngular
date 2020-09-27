@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { CommonModule } from '@angular/common';  
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DetallesComponent } from './components/detalles/detalles.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { MensajeErrorComponent } from './components/mensaje-error/mensaje-error.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { FooterComponent } from './components/footer/footer.component';
     DetallesComponent,
     NavbarComponent,
     FooterComponent,
+    MensajeErrorComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ import { FooterComponent } from './components/footer/footer.component';
     BrowserAnimationsModule,
     AngularMaterialModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

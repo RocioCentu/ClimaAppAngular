@@ -9,7 +9,10 @@
         <span class="sr-only">Loading...</span>
     </div>
 </div>
-<div class=" row justify-content-md-center mb-1 mp-1">
+
+<app-mensaje-error  [hidden]="ciudadSeleccionda" *ngIf="!loading"></app-mensaje-error>
+
+<div class=" row justify-content-md-center mb-1 mp-1" [hidden]="!ciudadSeleccionda">
     <div class="card " style="width: 40rem;height: 30rem;" *ngIf="!loading">
 
         <div class="card-body" style="width: 100%;">
