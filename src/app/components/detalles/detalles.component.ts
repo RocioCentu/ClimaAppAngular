@@ -1,11 +1,9 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { Route } from '@angular/compiler/src/core';
 import { Component, AfterContentInit, DoCheck, OnInit } from '@angular/core';
 
 
 import { Ciudad } from 'src/app/models/Ciudad';
 import { ServicioClimaService } from 'src/app/services/servicio-clima.service';
-import { ListCiudadesComponent } from '../list-ciudades/list-ciudades.component';
 
 
 @Component({
