@@ -14,7 +14,7 @@ import { ListCiudadesComponent } from '../list-ciudades/list-ciudades.component'
   styleUrls: ['./detalles.component.css']
 })
 export class DetallesComponent implements OnInit {
-  id: string;
+  name: string;
   ciudadSeleccionda: Ciudad;
   ciudad: Ciudad;
   loading = true;
@@ -22,7 +22,7 @@ export class DetallesComponent implements OnInit {
   list: Ciudad[] = [];
 
   constructor(private aRoute: ActivatedRoute, private servicesClima: ServicioClimaService, private router: Router) {
-    this.id = this.aRoute.snapshot.paramMap.get('id');
+    this.name= this.aRoute.snapshot.paramMap.get('id');
 
   }
 
@@ -32,9 +32,10 @@ export class DetallesComponent implements OnInit {
   }
 
   getCiudad(): void {
-    this.ciudadSeleccionda = this.servicesClima.filtrarCiudadPorId(this.id);
+    this.ciudadSeleccionda = this.servicesClima.filtrarCiudadPorId(this.name);
 
     if (this.ciudadSeleccionda === undefined) {
+      //vuelvo a hacer la llamada a la api para tener todas las ciudades
       this.servicesClima.getClima().subscribe(data => {
         this.ciudad = null;
         const tope = data.length;
@@ -57,8 +58,12 @@ export class DetallesComponent implements OnInit {
           this.listCiudades = [...this.listCiudades, this.ciudad];
         } 
         this.servicesClima.setlistCiudades(this.listCiudades);
-        this.ciudadSeleccionda = this.servicesClima.filtrarCiudadPorId(this.id);
+        //filtro la ciudad seleccionada
+        this.ciudadSeleccionda = this.servicesClima.filtrarCiudadPorId(this.name);
         this.loading = false;
+
+      
+
       });
     } else {
       this.loading = false;
