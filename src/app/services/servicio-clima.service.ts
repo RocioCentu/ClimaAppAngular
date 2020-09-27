@@ -29,8 +29,8 @@ export class ServicioClimaService {
     return this.listCiudades;
   }
 
-  filtrarCiudadPorId(id: string): Ciudad {
-    return this.listCiudades.find(item => item.id === id);
+  filtrarCiudadPorId(name: string): Ciudad {
+    return this.listCiudades.find(item => item.name === name);
   };
 
 

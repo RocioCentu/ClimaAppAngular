@@ -12,7 +12,7 @@ import { ServicioClimaService } from 'src/app/services/servicio-clima.service';
   styleUrls: ['./detalles.component.css']
 })
 export class DetallesComponent implements OnInit {
-  id: string;
+  name: string;
   ciudadSeleccionda: Ciudad;
   ciudad: Ciudad;
   loading = true;
@@ -20,7 +20,7 @@ export class DetallesComponent implements OnInit {
   list: Ciudad[] = [];
 
   constructor(private aRoute: ActivatedRoute, private servicesClima: ServicioClimaService, private router: Router) {
-    this.id= this.aRoute.snapshot.paramMap.get('id');
+    this.name= this.aRoute.snapshot.paramMap.get('name');
 
   }
 
@@ -30,7 +30,7 @@ export class DetallesComponent implements OnInit {
   }
 
   getCiudad(): void {
-    this.ciudadSeleccionda = this.servicesClima.filtrarCiudadPorId(this.id);
+    this.ciudadSeleccionda = this.servicesClima.filtrarCiudadPorId(this.name);
 
     if (this.ciudadSeleccionda === undefined) {
       //vuelvo a hacer la llamada a la api para tener todas las ciudades
@@ -57,7 +57,7 @@ export class DetallesComponent implements OnInit {
         } 
         this.servicesClima.setlistCiudades(this.listCiudades);
         //filtro la ciudad seleccionada
-        this.ciudadSeleccionda = this.servicesClima.filtrarCiudadPorId(this.id);
+        this.ciudadSeleccionda = this.servicesClima.filtrarCiudadPorId(this.name);
         this.loading = false;
 
       
