@@ -22,7 +22,7 @@ export class DetallesComponent implements OnInit {
   list: Ciudad[] = [];
 
   constructor(private aRoute: ActivatedRoute, private servicesClima: ServicioClimaService, private router: Router) {
-    this.name= this.aRoute.snapshot.paramMap.get('id');
+    this.name= this.aRoute.snapshot.paramMap.get('name');
 
   }
 
