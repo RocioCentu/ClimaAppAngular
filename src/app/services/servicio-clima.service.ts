@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of, pipe} from 'rxjs';
+import { Observable, of, pipe } from 'rxjs';
 import { Ciudad } from '../models/Ciudad';
 import { catchError } from 'rxjs/operators';
 
@@ -8,36 +8,35 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ServicioClimaService {
-   url='https://ws.smn.gob.ar/map_items/weather';
-   listCiudades: Ciudad[]=[];
+  url = 'https://ws.smn.gob.ar/map_items/weather';
+  listCiudades: Ciudad[] = [];
 
-  constructor(private http : HttpClient) {
+  constructor(private http: HttpClient) {
 
-   }
+  }
 
-   getClima(): Observable<any>{
+  getClima(): Observable<any> {
 
     return this.http.get<any>(this.url);
   }
 
-  setlistCiudades(list:Ciudad[]){
-    this.listCiudades=list;
+  setlistCiudades(list: Ciudad[]) {
+    this.listCiudades = list;
   }
 
-  getlistCiudades():Ciudad[]{
-    
+  getlistCiudades(): Ciudad[] {
+
     return this.listCiudades;
   }
 
-  filtrarCiudadPorId(id:string):Ciudad{
-      return  this.listCiudades.find(item=>item.id === id);
+  filtrarCiudadPorId(name: string): Ciudad {
+    return this.listCiudades.find(item => item.name === name);
   };
 
 
 
-  
 }
-     
 
-  
+
+
 

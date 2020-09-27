@@ -1,9 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+
+body { margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  background-color: #E8F1F1;}
 
 .container {
   min-height: calc(100% - 4rem);
 }
-
 
 .btn{
   color:white;
@@ -13,9 +17,6 @@
   color:white;
 
 }
-
-
-
 
 .spinnerColor{
     background-color: #33A2FF;
@@ -58,5 +59,4 @@ html {
     height: 4rem;
     color: white;
   }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #E8F1F1;}
+

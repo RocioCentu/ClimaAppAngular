@@ -1,55 +1,59 @@
 <div class="row d-flex justify-content-center mt-5" *ngIf="loading" style="height: 100%;">
-    <div class="spinner-grow text-danger spinnerColor" role="status"></div>
-    <div class="spinner-grow text-danger spinnerColor"  role="status"></div>
-    <div class="spinner-grow text-danger spinnerColor" role="status"></div>
-    <span style="width: 100%; color:#33A2FF" class=" text-center mt-2 ml-2"> Cargando datos...</span>
+  <div class="spinner-grow text-danger spinnerColor" role="status"></div>
+  <div class="spinner-grow text-danger spinnerColor" role="status"></div>
+  <div class="spinner-grow text-danger spinnerColor" role="status"></div>
+  <span style="width: 100%; color:#33A2FF" class=" text-center mt-2 ml-2"> Cargando datos...</span>
 </div>
-<div [hidden]="loading"> 
+<div [hidden]="loading">
 
-  <!-- <div *ngIf="!loading" -->
+
   <mat-form-field>
     <mat-label>Buscar ciudad</mat-label>
-    <input  matInput (keyup)="applyFilter($event)" placeholder="Buscar ciudad..." #input>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Buscar ciudad..." #input>
   </mat-form-field>
- 
-  <div  class="mat-elevation-z8 mb-2" >
-    <table mat-table [dataSource]="dataSource" >
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef> Ciudad</th>
-          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-        </ng-container>
-    
-        
-        <ng-container matColumnDef="temp">
-          <th mat-header-cell *matHeaderCellDef> Temperatura </th>
-          <td mat-cell *matCellDef="let element"> <img class="icon" src="../assets/img/max.png" />{{element.temp | number: '1.2-2'}} °C</td>
-        </ng-container>
-    
-      
-        <ng-container matColumnDef="humidity">
-          <th mat-header-cell *matHeaderCellDef> Humedad </th>
-          <td mat-cell *matCellDef="let element"> <img class="icon" src="../assets/img/humidity.png" />{{element.humidity}} %</td>
-        </ng-container>
-  
-        
-        <ng-container matColumnDef="descripcion">
-          <th mat-header-cell *matHeaderCellDef> Clima actual </th>
-          <td mat-cell *matCellDef="let element"> <img class="icon" src="../assets/img/clima.png" />{{element.wheater}} </td>
-        </ng-container>
-    
-        
-        <ng-container matColumnDef="action">
-          <th mat-header-cell *matHeaderCellDef> </th>
-          <td mat-cell *matCellDef="let element">
-              <button class="btn" mat-basic-button color="primary"  routerLink="/detalles/{{element.id}}"> Detalles  <i class="fas fa-arrow-right"></i></button>
-           </td>
 
-        </ng-container>
-    
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
-      <mat-paginator  [pageSizeOptions]="[5, 10, 100]" showFirstLastButtons></mat-paginator>  
-    
-    </div>
+  <div class="mat-elevation-z8 mb-2">
+    <table mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Ciudad</th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="temp">
+        <th mat-header-cell *matHeaderCellDef> Temperatura </th>
+        <td mat-cell *matCellDef="let element"> <img class="icon"
+            src="../assets/img/max.png" />{{element.temp | number: '1.2-2'}} °C</td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="humidity">
+        <th mat-header-cell *matHeaderCellDef> Humedad </th>
+        <td mat-cell *matCellDef="let element"> <img class="icon"
+            src="../assets/img/humidity.png" />{{element.humidity}} %</td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="descripcion">
+        <th mat-header-cell *matHeaderCellDef> Clima actual </th>
+        <td mat-cell *matCellDef="let element"> <img class="icon" src="../assets/img/clima.png" />{{element.wheater}}
+        </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let element">
+          <button class="btn" mat-basic-button color="primary" routerLink="/detalles/{{element.name}}"> Detalles <i
+              class="fas fa-arrow-right"></i></button>
+        </td>
+
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 100]" showFirstLastButtons></mat-paginator>
+
+  </div>
 </div>

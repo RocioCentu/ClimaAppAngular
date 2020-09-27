@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListCiudadesComponent } from './components/list-ciudades/list-ciudades.component';
 import { AngularMaterialModule } from './components/shared/angular-material/angular-material.module';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { DetallesComponent } from './components/detalles/detalles.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -16,12 +16,10 @@ import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
-  ListCiudadesComponent,
+    ListCiudadesComponent,
     DetallesComponent,
     NavbarComponent,
     FooterComponent,
-   
-    
   ],
   imports: [
     BrowserModule,
