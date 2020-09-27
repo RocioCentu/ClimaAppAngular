@@ -6,7 +6,7 @@ import { ListCiudadesComponent } from './components/list-ciudades/list-ciudades.
 const routes: Routes = [
   { path:'',redirectTo:'list-ciudades',pathMatch:'full'},
   {path:'list-ciudades',component: ListCiudadesComponent},
-  {path:'detalles',component: DetallesComponent},
+  {path:'detalles/:id',component: DetallesComponent},
   { path:'**',redirectTo:'layout',pathMatch:'full'} //si el usuario entra a una url que no existe
 ];
 

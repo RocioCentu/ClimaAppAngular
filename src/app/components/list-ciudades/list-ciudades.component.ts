@@ -17,15 +17,28 @@ export class ListCiudadesComponent implements OnInit {
   loading=true;
   ciudad:Ciudad;
   
-  constructor(private serviceClima: ServicioClimaService,
-                                 private router:Router) { 
+  constructor(private serviceClima: ServicioClimaService) { 
    
   }
 
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-
+ 
+ /* ngAfterViewInit() {
+    //verifico si ya obtuve los datos de la api para aignar el paginador 
+    if (this.loading || this.listCiudades.length === 0) {
+      setTimeout(() => {
+        this.ngAfterViewInit();
+      }, 1000);
+    
+    } else {
+      this.dataSource= new MatTableDataSource(this.listCiudades);
+       this.dataSource.paginator= this.paginator;
+      
+    
+    }
+}*/
   ngOnInit(): void {
     this.getClima();
   }
@@ -64,17 +77,14 @@ export class ListCiudadesComponent implements OnInit {
       }
      
       this.dataSource= new MatTableDataSource(this.listCiudades);
-      this.dataSource.paginator= this.paginator;
-      this.loading=false;
+      this.serviceClima.setlistCiudades(this.listCiudades);
+     this.dataSource.paginator= this.paginator;
+     this.loading=false;
     
       
     });
   }
 
-  pasarCiudad(ciudad:Ciudad):void{
-    this.serviceClima.setCiudadSeleccionada(ciudad);
-    this.router.navigate(['/detalles']);
-
-  }
+ 
 }
 

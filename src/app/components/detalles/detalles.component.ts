@@ -12,26 +12,34 @@ import { ServicioClimaService } from 'src/app/services/servicio-clima.service';
 })
 export class DetallesComponent implements OnInit {
   id:string;
-  ciudad:Ciudad;
+  ciudadSeleccionda:Ciudad;
   loading=true;
   listCiudades: any[]=[];
   
   constructor(private aRoute:ActivatedRoute ,private servicesClima: ServicioClimaService) { 
     this.id= this.aRoute.snapshot.paramMap.get('id');
+    
   }
  
  
+
   ngOnInit(): void {
     this.getCiudad();
     
    
   }
 
- 
-
   getCiudad():void{
-       this.ciudad=this.servicesClima.getCiudadSeleccionada();
-       this.loading=false;
+       this.listCiudades=this.servicesClima.getlistCiudades();
+       this.ciudadSeleccionda=this.servicesClima.filtrarCiudadPorId(this.id);
+       
+       if(this.ciudadSeleccionda === undefined){
+              
+               alert("error al cargar los datos");
+       }else{
+            this.loading=false;
+       }
+     
   }
 
 }

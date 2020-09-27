@@ -9,15 +9,15 @@
         <span class="sr-only">Loading...</span>
       </div>
 </div>
- <div class=" row justify-content-md-center mb-1 mp-1">
-        <div class="card " style="width: 50rem;height: 100%;" *ngIf="!loading">
+ <div class=" row justify-content-md-center mb-1 mp-1" >
+        <div class="card " style="width: 40rem;height: 30rem;" *ngIf="!loading">
            
             <div class="card-body" style="width: 100%;">
                 <div class="row ">
                      <div class="col-lg-12">
-                         <h2 class="card-title text-center">{{ciudad.name}}</h2>
-                         <h3 class="card-title text-center">{{ciudad.province}}</h3>
-                         <h2 class="card-subtitle mb-2 text-center text-muted">Actualmente {{ciudad.wheater}}</h2>
+                         <h2 class="card-title text-center">{{ciudadSeleccionda.name}}</h2>
+                         <h3 class="card-title text-center">{{ciudadSeleccionda.province}}</h3>
+                         <h2 class="card-subtitle mb-2 text-center text-muted">Actualmente {{ciudadSeleccionda.wheater}}</h2>
                       </div>
                   </div>
                  <div class="row justify-content-md-center">
@@ -25,11 +25,11 @@
                    
                      <div class="col-lg-5 text-center">
                       
-                       <h1><img style="width: 120px;height: 120px;" src="../assets/img/sun.png" >{{ciudad.temp | number: '1.2-2'}} °C</h1>
+                       <h1><img style="width: 100px;height: 100px;" src="../assets/img/sun.png" >{{ciudadSeleccionda.temp | number: '1.2-2'}} °C</h1>
                     </div>
                     <div class="col-lg-5">
                         <p class="float-left mt-5"></p>
-                       <h3 class="float-right mt-5"> Fecha: {{ciudad.date | date: 'dd/MM/yyyy'}}</h3>
+                       <h3 class="float-right mt-5"> Fecha: {{ciudadSeleccionda.date | date: 'dd/MM/yyyy'}}</h3>
                     </div>
                  </div>
 
@@ -39,15 +39,15 @@
                             
                             <li class="list-group-item">
                                 <p class="float-left">Max:</p>
-                                <span class="float-right"><img class="icon" src="../assets/img/max.png" />{{ ciudad.temp_max | number: '1.2-2'}} °C</span>
+                                <span class="float-right"><img class="icon" src="../assets/img/max.png" />{{ ciudadSeleccionda.temp_max | number: '1.2-2'}} °C</span>
                             </li>
                             <li class="list-group-item">
                                 <p class="float-left">Viento:</p>
-                                <span class="float-right"> <img class="icon" src="../assets/img/windy.png" />{{ciudad.wind_speed }} km/h </span>
+                                <span class="float-right"> <img class="icon" src="../assets/img/windy.png" />{{ciudadSeleccionda.wind_speed }} km/h </span>
                             </li>
                             <li class="list-group-item">
                                 <p class="float-left">Humedad:</p>
-                                <span class="float-right"><img class="icon" src="../assets/img/humidity.png" /> {{ciudad.humidity}} %</span>
+                                <span class="float-right"><img class="icon" src="../assets/img/humidity.png" /> {{ciudadSeleccionda.humidity}} %</span>
                             </li>
                            
                           </ul>
@@ -57,15 +57,15 @@
                             <li class="list-group-item">
                              
                                 <p class="float-left">Min:</p>
-                                <span class="float-right"><img class="icon" src="../assets/img/min.png" />{{ ciudad.temp_min | number: '1.2-2'}} °C</span>
+                                <span class="float-right"><img class="icon" src="../assets/img/min.png" />{{ ciudadSeleccionda.temp_min | number: '1.2-2'}} °C</span>
                             </li>
                             <li class="list-group-item">
                                 <p class="float-left">Visibilidad:</p>
-                                <span class="float-right"><img class="icon" src="../assets/img/visibility.png" />{{ ciudad.visibility}} /km</span>
+                                <span class="float-right"><img class="icon" src="../assets/img/visibility.png" />{{ ciudadSeleccionda.visibility}} /km</span>
                             </li>
                             <li class="list-group-item">
                                 <p class="float-left">Presión:</p>
-                                <span class="float-right"><img class="icon" src="../assets/img/compass.png" /> {{ciudad.pressure}} hPa</span>
+                                <span class="float-right"><img class="icon" src="../assets/img/compass.png" /> {{ciudadSeleccionda.pressure}} hPa</span>
                             </li>
                         
                            

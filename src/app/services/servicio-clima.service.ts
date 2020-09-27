@@ -9,7 +9,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class ServicioClimaService {
    url='https://ws.smn.gob.ar/map_items/weather';
-   ciudadSeleccionada:Ciudad;
+   listCiudades: Ciudad[]=[];
 
   constructor(private http : HttpClient) {
 
@@ -20,14 +20,22 @@ export class ServicioClimaService {
     return this.http.get<any>(this.url);
   }
 
-  setCiudadSeleccionada(ciudad:Ciudad){
-    this.ciudadSeleccionada=ciudad;
+  setlistCiudades(list:Ciudad[]){
+    this.listCiudades=list;
   }
 
-  getCiudadSeleccionada():Ciudad{
+  getlistCiudades():Ciudad[]{
     
-    return this.ciudadSeleccionada;
+    return this.listCiudades;
   }
+
+  filtrarCiudadPorId(id:string):Ciudad{
+      return  this.listCiudades.find(item=>item.id === id);
+  };
+
+
+
+  
 }
      
 
